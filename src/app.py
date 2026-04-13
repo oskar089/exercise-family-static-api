@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 CORS(app)
 
-# create the jackson family object
+# Create the jackson family object
 jackson_family = FamilyStructure("Jackson")
 
 jackson_family.add_member({
@@ -57,8 +57,7 @@ def sitemap():
 
 @app.route('/members', methods=['GET'])
 def handle_hello():
-
-    # this is how you can use the Family datastructure by calling its methods
+    # This is how you can use the Family datastructure by calling its methods
     members = jackson_family.get_all_members()
     response_body = {
         "family": members
