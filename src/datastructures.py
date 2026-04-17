@@ -8,6 +8,7 @@ from random import randint
 
 
 class FamilyStructure:
+    id = 0
     def __init__(self, last_name):
         self.last_name = last_name
 
@@ -16,7 +17,9 @@ class FamilyStructure:
 
     # read-only: Use this method to generate random members ID's when adding members into the list
     def _generateId(self):
-        return randint(0, 10)
+
+        self.id+=1
+        return self.id
 
     def add_member(self, member):
         # fill this method and update the return
@@ -31,7 +34,7 @@ class FamilyStructure:
     def delete_member(self, id):
         # fill this method and update the return
         # Filtramos la lista para quitar al miembro con ese id
-        for i in range(len(self.members)):
+        for i in range(len(self._members)):
             if self._members[i]["id"] ==id:
                 self._members.pop(i)
                 return True
