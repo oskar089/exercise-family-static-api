@@ -4,6 +4,8 @@ Update this file to implement the following already declared methods:
 - delete_member: Should delete a member from the self._members list
 - get_member: Should return a member from the self._members list
 """
+from random import randint
+
 
 class FamilyStructure:
     def __init__(self, last_name):
@@ -33,8 +35,7 @@ class FamilyStructure:
             if self._members[i]["id"] ==id:
                 self._members.pop(i)
                 return True
-            return False
-        pass
+        return False
 
     def get_member(self, id):
         # fill this method and update the return
@@ -42,8 +43,8 @@ class FamilyStructure:
         for member in self._members:
             if member["id"] == id:
                 return member
-            return None
-        pass
+        return None
+
 
     # This method is done, it returns a list with all the family members
     def get_all_members(self):
